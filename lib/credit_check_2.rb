@@ -24,8 +24,7 @@ class CreditCheck
   end
 
   def sum_digits
-    number = double_every_other_digit
-    digits = number.map.with_index { |n,i| n >= 10 ? n - 9 : n}
+    digits = double_every_other_digit.map.with_index { |n,i| n >= 10 ? n - 9 : n}
     digits.each { |n| @sum += n }
   end
 
