@@ -13,19 +13,25 @@ class CreditCheck
   end
 
   def runner
-    double_every_other_digit
+    digits
     sum_digits
     valid_or_invalid
   end
 
+  def digits
+    number.to_s.split('').map {|digit| digit.to_i}
+  end
+
   def double_every_other_digit
-    digits = number.to_s.split('').map {|digit| digit.to_i}
     digits.map.with_index { |n,i| i % 2 == 0 ? n * 2 : n }
   end
 
+  def numbers_over_ten
+    double_every_other_digit.map.with_index { |n,i| n >= 10 ? n - 9 : n}
+  end
+
   def sum_digits
-    digits = double_every_other_digit.map.with_index { |n,i| n >= 10 ? n - 9 : n}
-    digits.each { |n| @sum += n }
+    numbers_over_ten.each { |n| @sum += n }
   end
 
   def valid_or_invalid
@@ -35,6 +41,5 @@ class CreditCheck
       puts "This card is \n invalid".red
     end
   end
-
 
 end
