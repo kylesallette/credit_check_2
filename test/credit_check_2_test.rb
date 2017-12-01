@@ -23,7 +23,7 @@ class CreditCheckTest < Minitest::Test
   def test_check_double_every_other_digit
     credit = CreditCheck.new(2689)
 
-    assert_equal [4,6,16,9] , credit.double_digits
+    assert_equal [4,6,16,9] , credit.double_every_other_digit
   end
 
   def test_sum_digits_over_ten
