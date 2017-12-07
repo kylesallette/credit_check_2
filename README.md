@@ -1,4 +1,4 @@
-![alt text](https://pbs.twimg.com/profile_images/845899704122552320/9uSrb5LV.jpg)
+![alt text](http://www.datagenetics.com/blog/july42013/luhn.png)
 
 # Credit Check
 
